@@ -1,0 +1,739 @@
+/* ========================================
+PARADISE BARBER — PREMIUM DESIGN
+======================================== */
+
+.barber-site {
+--barber-bg: #0c0c0b;
+--barber-card: #151513;
+--barber-gold: #c8a96b;
+--barber-text: #f4f0e8;
+--barber-muted: #96938b;
+
+background: var(--barber-bg);
+color: var(--barber-text);
+font-family: Arial, Helvetica, sans-serif;
+min-height: 100vh;
+overflow: hidden;
+}
+
+.barber-site * {
+box-sizing: border-box;
+}
+
+.barber-site a {
+color: inherit;
+text-decoration: none;
+}
+
+.barber-site button,
+.barber-site a {
+-webkit-tap-highlight-color: transparent;
+}
+
+/* HEADER */
+
+.barber-header {
+min-height: 88px;
+padding: 0 8%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 28px;
+border-bottom: 1px solid #25241f;
+}
+
+.barber-logo {
+display: inline-flex;
+flex-direction: column;
+gap: 4px;
+font-size: 19px;
+font-weight: 900;
+letter-spacing: 3px;
+}
+
+.barber-logo span {
+color: var(--barber-gold);
+font-size: 10px;
+letter-spacing: 6px;
+}
+
+.barber-nav {
+display: flex;
+align-items: center;
+gap: 32px;
+}
+
+.barber-nav a {
+color: #c5c1b8;
+font-size: 12px;
+transition: color 0.2s ease;
+}
+
+.barber-nav a {
+color: var(--barber-gold);
+}
+
+.barber-header-button {
+padding: 13px 18px;
+border: 1px solid #8e7548;
+color: var(--barber-gold) !important;
+font-size: 11px;
+font-weight: 700;
+transition: background 0.2s ease, color 0.2s ease;
+}
+
+.barber-header-button {
+background: var(--barber-gold);
+color: #111 !important;
+}
+
+/* HERO */
+
+.barber-hero {
+min-height: 650px;
+padding: 90px 10% 100px;
+display: grid;
+grid-template-columns: 1.1fr 0.9fr;
+align-items: center;
+gap: 55px;
+position: relative;
+background:
+radial-gradient(ellipse at 78% 48%, #292216 0%, transparent 43%),
+linear-gradient(110deg, #0c0c0b 35%, #12110e 100%);
+}
+
+.barber-hero-content {
+position: relative;
+z-index: 2;
+}
+
+.barber-eyebrow {
+display: inline-block;
+color: var(--barber-gold);
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 3px;
+line-height: 1.8;
+}
+
+.barber-hero h1 {
+margin: 26px 0 22px;
+font-size: clamp(42px, 5.5vw, 76px);
+line-height: 0.98;
+font-weight: 900;
+letter-spacing: -3px;
+}
+
+.barber-hero h1 span,
+.barber-section-heading h2 span,
+.barber-about h2 span,
+.barber-contact h2 span {
+color: var(--barber-gold);
+}
+
+.barber-hero-content > p {
+max-width: 420px;
+color: var(--barber-muted);
+font-size: 14px;
+line-height: 1.9;
+}
+
+.barber-hero-actions {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 14px;
+margin-top: 32px;
+}
+
+.barber-button-primary,
+.barber-button-secondary {
+min-height: 48px;
+padding: 0 22px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+font-size: 11px;
+font-weight: 700;
+transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.barber-button-primary {
+background: var(--barber-gold);
+color: #111 !important;
+}
+
+.barber-button-primary {
+background: #e0c58f;
+transform: translateY(-2px);
+}
+
+.barber-button-secondary {
+border: 1px solid #39372f;
+color: var(--barber-text) !important;
+}
+
+.barber-button-secondary {
+border-color: var(--barber-gold);
+}
+
+.barber-rating {
+display: flex;
+align-items: center;
+gap: 16px;
+margin-top: 48px;
+}
+
+.barber-rating > span {
+color: var(--barber-gold);
+letter-spacing: 3px;
+font-size: 14px;
+}
+
+.barber-rating p {
+color: #8e8a80;
+font-size: 9px;
+letter-spacing: 1.5px;
+}
+
+/* HERO VISUAL */
+
+.barber-hero-visual {
+min-height: 420px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.barber-visual-frame {
+width: min(100%, 380px);
+height: 420px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+border: 1px solid #665331;
+background:
+radial-gradient(circle at 50% 40%, #3a3020 0%, transparent 35%),
+repeating-linear-gradient(
+135deg,
+#171611 0px,
+#171611 2px,
+#11110e 2px,
+#11110e 5px
+);
+}
+
+.barber-visual-frame::before {
+content: "";
+position: absolute;
+inset: 15px;
+border: 1px solid #49402e;
+pointer-events: none;
+}
+
+.barber-visual-frame::after {
+content: "";
+position: absolute;
+width: 270px;
+height: 270px;
+border: 1px solid #78613b;
+border-radius: 50%;
+opacity: 0.35;
+}
+
+.barber-visual-circle {
+width: 170px;
+height: 170px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid var(--barber-gold);
+border-radius: 50%;
+color: var(--barber-gold);
+font-size: 55px;
+font-weight: 900;
+letter-spacing: -5px;
+box-shadow: 0 0 70px #c8a96b15;
+}
+
+.barber-visual-top,
+.barber-visual-bottom {
+position: absolute;
+z-index: 2;
+color: #c5b38f;
+font-size: 9px;
+letter-spacing: 4px;
+}
+
+.barber-visual-top {
+top: 42px;
+}
+
+.barber-visual-bottom {
+bottom: 40px;
+}
+
+.barber-floating-card {
+position: absolute;
+bottom: 35px;
+left: -35px;
+z-index: 3;
+display: flex;
+align-items: center;
+gap: 14px;
+padding: 18px 22px;
+border: 1px solid #343027;
+background: #181713;
+box-shadow: 0 15px 45px #0008;
+}
+
+.barber-floating-card > span {
+color: var(--barber-gold);
+font-size: 25px;
+}
+
+.barber-floating-card div {
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+
+.barber-floating-card strong {
+font-size: 12px;
+}
+
+.barber-floating-card small {
+color: var(--barber-muted);
+font-size: 10px;
+}
+
+.barber-hero-number {
+position: absolute;
+right: 5%;
+bottom: 28px;
+color: #666054;
+font-size: 10px;
+letter-spacing: 2px;
+}
+
+/* SERVICES */
+
+.barber-services {
+padding: 100px 10%;
+background: #10100e;
+}
+
+.barber-section-heading {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+gap: 30px;
+margin-bottom: 45px;
+}
+
+.barber-section-heading h2 {
+margin: 16px 0 0;
+font-size: clamp(30px, 4vw, 46px);
+letter-spacing: -1.5px;
+}
+
+.barber-section-heading > p {
+max-width: 270px;
+color: var(--barber-muted);
+font-size: 12px;
+line-height: 1.9;
+}
+
+.barber-service-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 18px;
+}
+
+.barber-service-card {
+min-height: 285px;
+padding: 28px;
+position: relative;
+border: 1px solid #2c2a23;
+background: var(--barber-card);
+transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.barber-service-card {
+transform: translateY(-5px);
+border-color: #8e7548;
+}
+
+.barber-service-number {
+position: absolute;
+top: 25px;
+right: 25px;
+color: #5e5849;
+font-size: 11px;
+}
+
+.barber-service-icon {
+width: 52px;
+height: 52px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 28px;
+border: 1px solid #5b4a2d;
+color: var(--barber-gold);
+font-size: 25px;
+}
+
+.barber-service-card h3 {
+margin: 0 0 12px;
+font-size: 17px;
+}
+
+.barber-service-card > p {
+min-height: 43px;
+color: var(--barber-muted);
+font-size: 11px;
+line-height: 1.8;
+}
+
+.barber-service-footer {
+display: flex;
+align-items: center;
+justify-content: space-between;
+margin-top: 25px;
+padding-top: 18px;
+border-top: 1px solid #302d25;
+}
+
+.barber-service-footer strong {
+color: var(--barber-gold);
+font-size: 20px;
+}
+
+.barber-service-footer a {
+width: 35px;
+height: 35px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #5b4a2d;
+color: var(--barber-gold);
+transition: background 0.2s ease;
+}
+
+.barber-service-footer a {
+background: #3a3020;
+}
+
+.barber-demo-note {
+margin-top: 28px;
+color: #777165;
+font-size: 9px;
+letter-spacing: 1.5px;
+text-align: center;
+}
+
+/* ABOUT */
+
+.barber-about {
+padding: 100px 12%;
+display: grid;
+grid-template-columns: 0.7fr 1.3fr;
+align-items: center;
+gap: 70px;
+background:
+radial-gradient(ellipse at 20% 50%, #292216 0%, transparent 40%),
+#0c0c0b;
+}
+
+.barber-about-mark {
+min-height: 270px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #54452c;
+color: var(--barber-gold);
+font-size: clamp(70px, 9vw, 115px);
+font-weight: 900;
+letter-spacing: -10px;
+background: linear-gradient(145deg, #201c14, #0d0d0b);
+}
+
+.barber-about-mark span {
+color: #f4f0e8;
+}
+
+.barber-about h2 {
+margin: 18px 0;
+font-size: clamp(32px, 4vw, 48px);
+line-height: 1.1;
+letter-spacing: -1.5px;
+}
+
+.barber-about p {
+max-width: 490px;
+color: var(--barber-muted);
+font-size: 13px;
+line-height: 2;
+}
+
+/* CONTACT */
+
+.barber-contact {
+padding: 90px 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+border-top: 1px solid #29271f;
+border-bottom: 1px solid #29271f;
+background:
+radial-gradient(ellipse at center, #292216 0%, transparent 65%),
+#11110f;
+}
+
+.barber-contact h2 {
+margin: 20px 0 15px;
+font-size: clamp(42px, 6vw, 65px);
+line-height: 1.05;
+letter-spacing: -2px;
+}
+
+.barber-contact > p {
+margin-bottom: 28px;
+color: var(--barber-muted);
+font-size: 13px;
+line-height: 1.8;
+}
+
+.barber-contact > small {
+margin-top: 20px;
+color: #777165;
+font-size: 10px;
+}
+
+/* FOOTER */
+
+.barber-footer {
+min-height: 100px;
+padding: 28px 8%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 25px;
+}
+
+.barber-footer > p,
+.barber-footer > span {
+color: #817c71;
+font-size: 9px;
+letter-spacing: 1.5px;
+}
+
+/* RESPONSIVE — TABLETS */
+
+@media (max-width: 1000px) {
+.barber-header {
+padding: 0 5%;
+}
+
+.barber-nav {
+gap: 18px;
+}
+
+.barber-hero {
+padding: 75px 7%;
+gap: 30px;
+}
+
+.barber-hero h1 {
+font-size: clamp(42px, 6vw, 65px);
+}
+
+.barber-visual-frame {
+height: 360px;
+}
+
+.barber-hero-visual {
+min-height: 360px;
+}
+
+.barber-services {
+padding: 80px 7%;
+}
+
+.barber-service-card {
+padding: 22px;
+}
+
+.barber-about {
+padding: 80px 8%;
+gap: 40px;
+}
+}
+
+/* RESPONSIVE — MOBILE */
+
+@media (max-width: 700px) {
+.barber-header {
+padding: 22px 6%;
+min-height: auto;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.barber-logo {
+font-size: 17px;
+}
+
+.barber-header-button {
+padding: 11px 13px;
+font-size: 10px;
+}
+
+.barber-nav {
+order: 3;
+width: 100%;
+justify-content: space-between;
+gap: 10px;
+padding-top: 15px;
+border-top: 1px solid #25241f;
+}
+
+.barber-nav a {
+font-size: 11px;
+}
+
+.barber-hero {
+grid-template-columns: 1fr;
+padding: 65px 7% 85px;
+gap: 45px;
+}
+
+.barber-hero h1 {
+font-size: clamp(46px, 12vw, 68px);
+letter-spacing: -2px;
+}
+
+.barber-hero-content > p {
+font-size: 13px;
+}
+
+.barber-hero-actions {
+align-items: stretch;
+}
+
+.barber-button-primary,
+.barber-button-secondary {
+padding: 0 16px;
+font-size: 10px;
+}
+
+.barber-rating {
+margin-top: 35px;
+gap: 10px;
+}
+
+.barber-rating p {
+font-size: 8px;
+letter-spacing: 1px;
+}
+
+.barber-hero-visual {
+min-height: 330px;
+}
+
+.barber-visual-frame {
+width: 85%;
+height: 330px;
+}
+
+.barber-visual-circle {
+width: 140px;
+height: 140px;
+font-size: 45px;
+}
+
+.barber-floating-card {
+left: -2px;
+bottom: 18px;
+padding: 13px 15px;
+}
+
+.barber-hero-number {
+right: 7%;
+bottom: 25px;
+}
+
+.barber-services {
+padding: 70px 7%;
+}
+
+.barber-section-heading {
+align-items: flex-start;
+flex-direction: column;
+gap: 12px;
+margin-bottom: 30px;
+}
+
+.barber-section-heading h2 {
+font-size: 34px;
+}
+
+.barber-service-grid {
+grid-template-columns: 1fr;
+gap: 15px;
+}
+
+.barber-service-card {
+min-height: 250px;
+padding: 25px;
+}
+
+.barber-service-card > p {
+min-height: auto;
+}
+
+.barber-about {
+grid-template-columns: 1fr;
+padding: 70px 7%;
+gap: 35px;
+}
+
+.barber-about-mark {
+min-height: 200px;
+font-size: 85px;
+}
+
+.barber-about h2 {
+font-size: 38px;
+}
+
+.barber-contact {
+padding: 75px 7%;
+}
+
+.barber-contact h2 {
+font-size: 46px;
+}
+
+.barber-footer {
+padding: 30px 7%;
+flex-direction: column;
+align-items: flex-start;
+gap: 15px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.barber-site *,
+.barber-site *::before,
+.barber-site *::after {
+transition: none !important;
+scroll-behavior: auto !important;
+}
+}

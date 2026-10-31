@@ -1,0 +1,214 @@
+.servicos-page {
+min-height: 100vh;
+padding: 0 7%;
+overflow: hidden;
+color: #fff;
+background:
+radial-gradient(ellipse at 15% 15%, rgba(123, 47, 255, 0.16), transparent 40%),
+radial-gradient(ellipse at 85% 45%, rgba(255, 60, 172, 0.09), transparent 35%),
+#090714;
+font-family: Inter, Arial, sans-serif;
+}
+
+.servicos-header {
+min-height: 90px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid rgba(123, 47, 255, 0.3);
+}
+
+.servicos-logo {
+color: #fff;
+font-size: 25px;
+font-weight: 900;
+letter-spacing: -1px;
+text-decoration: none;
+}
+
+.servicos-logo span {
+color: #ff3cac;
+}
+
+.servicos-voltar {
+padding: 11px 20px;
+border: 1px solid rgba(0, 245, 212, 0.55);
+border-radius: 30px;
+color: #fff;
+background: rgba(0, 245, 212, 0.05);
+cursor: pointer;
+transition: background 0.25s, transform 0.25s;
+}
+
+.servicos-voltar {
+background: rgba(0, 245, 212, 0.14);
+transform: translateY(-2px);
+}
+
+.servicos-hero {
+max-width: 900px;
+margin: 0 auto;
+padding: 90px 0 65px;
+text-align: center;
+}
+
+.servicos-eyebrow {
+color: #00f5d4;
+font-size: 11px;
+font-weight: 700;
+letter-spacing: 5px;
+}
+
+.servicos-hero h1 {
+margin: 24px 0;
+font-size: clamp(36px, 5.5vw, 66px);
+font-weight: 900;
+line-height: 1.12;
+letter-spacing: -2px;
+}
+
+.servicos-hero h1 span {
+color: #ff3cac;
+text-shadow: 0 0 35px rgba(255, 60, 172, 0.2);
+}
+
+.servicos-hero p {
+max-width: 610px;
+margin: 0 auto;
+color: rgba(255, 255, 255, 0.7);
+font-size: 16px;
+line-height: 1.8;
+}
+
+.servicos-lista {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 24px;
+max-width: 1050px;
+margin: 0 auto;
+padding-bottom: 100px;
+}
+
+.servico-card {
+position: relative;
+padding: 35px;
+border: 1px solid rgba(123, 47, 255, 0.4);
+border-radius: 20px;
+background: linear-gradient(
+145deg,
+rgba(25, 19, 44, 0.94),
+rgba(12, 9, 24, 0.94)
+);
+transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.servico-card {
+transform: translateY(-6px);
+border-color: rgba(0, 245, 212, 0.65);
+box-shadow: 0 15px 45px rgba(123, 47, 255, 0.12);
+}
+
+.servico-numero {
+color: #00f5d4;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 2px;
+}
+
+.servico-icone {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 55px;
+height: 55px;
+margin: 30px 0 22px;
+border: 1px solid rgba(255, 60, 172, 0.45);
+border-radius: 15px;
+color: #ff3cac;
+background: rgba(255, 60, 172, 0.07);
+font-size: 28px;
+}
+
+.servico-card h2 {
+margin: 0 0 15px;
+font-size: clamp(20px, 2vw, 25px);
+line-height: 1.35;
+}
+
+.servico-card p {
+min-height: 78px;
+margin: 0 0 28px;
+color: rgba(255, 255, 255, 0.68);
+font-size: 14px;
+line-height: 1.8;
+}
+
+.servico-card button {
+display: inline-flex;
+align-items: center;
+gap: 15px;
+padding: 13px 19px;
+border: 1px solid rgba(0, 245, 212, 0.55);
+border-radius: 30px;
+color: #fff;
+background: rgba(0, 245, 212, 0.05);
+cursor: pointer;
+transition: background 0.25s;
+}
+
+.servico-card button {
+background: rgba(0, 245, 212, 0.14);
+}
+
+.servico-card button span {
+color: #00f5d4;
+}
+
+.servicos-footer {
+display: flex;
+justify-content: space-between;
+gap: 20px;
+padding: 25px 0;
+border-top: 1px solid rgba(123, 47, 255, 0.25);
+color: rgba(255, 255, 255, 0.45);
+font-size: 10px;
+letter-spacing: 2px;
+}
+
+.servicos-footer span {
+color: #ff3cac;
+font-weight: 900;
+}
+
+@media (max-width: 700px) {
+.servicos-page {
+padding: 0 5%;
+}
+
+.servicos-hero {
+padding: 65px 0 45px;
+}
+
+.servicos-hero h1 {
+letter-spacing: -1px;
+}
+
+.servicos-lista {
+grid-template-columns: 1fr;
+padding-bottom: 60px;
+}
+
+.servico-card {
+padding: 27px;
+}
+
+.servico-card p {
+min-height: auto;
+}
+
+.servicos-footer {
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+}

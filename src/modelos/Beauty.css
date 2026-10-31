@@ -1,0 +1,883 @@
+/* ========================================
+PARADISE BEAUTY — PREMIUM DESIGN
+======================================== */
+
+.beauty-site {
+--beauty-bg: #faf6f1;
+--beauty-paper: #fffdf9;
+--beauty-rose: #b77e79;
+--beauty-deep-rose: #855c59;
+--beauty-text: #40322f;
+--beauty-muted: #887a73;
+--beauty-line: #e8dcd3;
+
+min-height: 100vh;
+overflow: hidden;
+background: var(--beauty-bg);
+color: var(--beauty-text);
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.beauty-site * {
+box-sizing: border-box;
+}
+
+.beauty-site a {
+color: inherit;
+text-decoration: none;
+}
+
+.beauty-site a,
+.beauty-site button {
+-webkit-tap-highlight-color: transparent;
+}
+
+/* HEADER */
+
+.beauty-header {
+min-height: 94px;
+padding: 18px 7%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 28px;
+border-bottom: 1px solid var(--beauty-line);
+background: var(--beauty-paper);
+}
+
+.beauty-logo {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 6px;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 24px;
+letter-spacing: 5px;
+}
+
+.beauty-logo span {
+color: var(--beauty-rose);
+font-family: Arial, Helvetica, sans-serif;
+font-size: 9px;
+letter-spacing: 4px;
+}
+
+.beauty-nav {
+display: flex;
+align-items: center;
+gap: 27px;
+}
+
+.beauty-nav a {
+color: #65534d;
+font-size: 11px;
+transition: color 0.2s ease;
+}
+
+.beauty-nav a {
+color: var(--beauty-rose);
+}
+
+.beauty-header-cta {
+padding: 14px 18px;
+border: 1px solid var(--beauty-rose);
+color: var(--beauty-deep-rose) !important;
+font-size: 10px;
+letter-spacing: 1px;
+transition: background 0.2s ease, color 0.2s ease;
+}
+
+.beauty-header-cta {
+background: var(--beauty-rose);
+color: white !important;
+}
+
+/* HERO */
+
+.beauty-hero {
+min-height: 590px;
+padding: 75px 9%;
+display: grid;
+grid-template-columns: 1fr 0.9fr;
+align-items: center;
+gap: 65px;
+position: relative;
+background:
+radial-gradient(ellipse at 80% 40%, #ead7ce 0%, transparent 45%),
+var(--beauty-bg);
+}
+
+.beauty-hero-content {
+position: relative;
+z-index: 2;
+}
+
+.beauty-eyebrow {
+display: inline-block;
+color: var(--beauty-deep-rose);
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 2.5px;
+line-height: 1.8;
+}
+
+.beauty-hero h1 {
+margin: 25px 0;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: clamp(55px, 6.5vw, 83px);
+font-weight: 400;
+line-height: 0.98;
+letter-spacing: -3px;
+}
+
+.beauty-hero h1 em,
+.beauty-intro h2 em,
+.beauty-section-heading h2 em,
+.beauty-about h2 em,
+.beauty-contact h2 em {
+color: var(--beauty-rose);
+font-family: Georgia, 'Times New Roman', serif;
+font-weight: 400;
+}
+
+.beauty-hero-content > p {
+max-width: 430px;
+color: var(--beauty-muted);
+font-size: 13px;
+line-height: 1.9;
+}
+
+.beauty-hero-actions {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+gap: 13px;
+margin-top: 30px;
+}
+
+.beauty-button-primary,
+.beauty-button-secondary {
+min-height: 48px;
+padding: 0 19px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 0.7px;
+transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.beauty-button-primary {
+background: var(--beauty-rose);
+color: white !important;
+}
+
+.beauty-button-primary {
+background: var(--beauty-deep-rose);
+transform: translateY(-2px);
+}
+
+.beauty-button-secondary {
+border: 1px solid #d7c5bb;
+color: var(--beauty-text) !important;
+}
+
+.beauty-button-secondary {
+border-color: var(--beauty-rose);
+}
+
+.beauty-hero-note {
+display: flex;
+align-items: center;
+gap: 15px;
+margin-top: 44px;
+}
+
+.beauty-hero-note > span {
+color: var(--beauty-rose);
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 31px;
+}
+
+.beauty-hero-note div {
+display: flex;
+flex-direction: column;
+gap: 5px;
+}
+
+.beauty-hero-note strong {
+font-size: 9px;
+letter-spacing: 1.5px;
+}
+
+.beauty-hero-note small {
+color: var(--beauty-muted);
+font-size: 11px;
+}
+
+/* HERO VISUAL */
+
+.beauty-hero-visual {
+min-height: 400px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.beauty-image-frame {
+width: min(100%, 400px);
+height: 420px;
+padding: 15px;
+position: relative;
+border: 1px solid #c8a69b;
+background: #f0e1d9;
+}
+
+.beauty-image-placeholder {
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 22px;
+background:
+radial-gradient(ellipse at 50% 35%, #ead2c6 0%, transparent 48%),
+linear-gradient(145deg, #dfc3b6, #f6e9df 55%, #d3afa3);
+}
+
+.beauty-image-placeholder > span {
+width: 145px;
+height: 145px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #b88c80;
+border-radius: 50%;
+color: #956b63;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 53px;
+letter-spacing: -4px;
+}
+
+.beauty-image-placeholder small {
+color: #76534d;
+font-size: 8px;
+letter-spacing: 3px;
+}
+
+.beauty-image-caption {
+position: absolute;
+right: 15px;
+bottom: 15px;
+left: 15px;
+padding: 13px 10px;
+display: flex;
+justify-content: space-between;
+background: #fffaf2e8;
+color: #76534d;
+font-size: 8px;
+letter-spacing: 1px;
+}
+
+.beauty-floating-note {
+position: absolute;
+right: -30px;
+bottom: 35px;
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 17px 22px;
+border: 1px solid #e3d0c6;
+background: var(--beauty-paper);
+box-shadow: 0 12px 35px #73554b12;
+}
+
+.beauty-floating-note > span {
+color: var(--beauty-rose);
+font-size: 26px;
+}
+
+.beauty-floating-note p {
+display: flex;
+flex-direction: column;
+gap: 5px;
+margin: 0;
+}
+
+.beauty-floating-note strong {
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 13px;
+}
+
+.beauty-floating-note small {
+color: var(--beauty-muted);
+font-size: 10px;
+}
+
+.beauty-hero-side-text {
+position: absolute;
+top: 50%;
+right: 2%;
+color: #b6a49b;
+font-size: 8px;
+letter-spacing: 2px;
+writing-mode: vertical-rl;
+}
+
+/* INTRO */
+
+.beauty-intro {
+padding: 85px 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+border-top: 1px solid var(--beauty-line);
+border-bottom: 1px solid var(--beauty-line);
+background: var(--beauty-paper);
+}
+
+.beauty-intro h2 {
+margin: 20px 0;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: clamp(35px, 4.5vw, 53px);
+font-weight: 400;
+line-height: 1.15;
+letter-spacing: -1px;
+}
+
+.beauty-intro > p {
+max-width: 550px;
+color: var(--beauty-muted);
+font-size: 12px;
+line-height: 2;
+}
+
+/* SERVICES */
+
+.beauty-services,
+.beauty-gallery {
+padding: 90px 9%;
+}
+
+.beauty-section-heading {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+gap: 30px;
+margin-bottom: 38px;
+}
+
+.beauty-section-heading h2 {
+margin: 13px 0 0;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: clamp(33px, 4vw, 47px);
+font-weight: 400;
+letter-spacing: -1.5px;
+}
+
+.beauty-section-heading > p {
+max-width: 270px;
+color: var(--beauty-muted);
+font-size: 12px;
+line-height: 1.9;
+}
+
+.beauty-service-grid {
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 15px;
+}
+
+.beauty-service-card {
+min-height: 275px;
+padding: 25px 21px;
+position: relative;
+border: 1px solid var(--beauty-line);
+background: var(--beauty-paper);
+transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.beauty-service-card {
+transform: translateY(-4px);
+border-color: #c8a69b;
+}
+
+.beauty-service-number {
+position: absolute;
+top: 20px;
+right: 20px;
+color: #b9a49a;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 13px;
+}
+
+.beauty-service-symbol {
+width: 48px;
+height: 48px;
+margin-bottom: 25px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #d7b8ad;
+border-radius: 50%;
+color: var(--beauty-rose);
+font-size: 22px;
+}
+
+.beauty-service-card h3 {
+margin: 0 0 12px;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 17px;
+font-weight: 400;
+}
+
+.beauty-service-card > p {
+min-height: 60px;
+color: var(--beauty-muted);
+font-size: 10px;
+line-height: 1.8;
+}
+
+.beauty-service-footer {
+margin-top: 20px;
+padding-top: 16px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 8px;
+border-top: 1px solid var(--beauty-line);
+}
+
+.beauty-service-footer > span {
+color: var(--beauty-deep-rose);
+font-size: 10px;
+font-weight: 700;
+}
+
+.beauty-service-footer > a {
+width: 30px;
+height: 30px;
+flex-shrink: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #d7b8ad;
+color: var(--beauty-deep-rose);
+}
+
+.beauty-service-footer > a {
+background: #f2e3dc;
+}
+
+.beauty-demo-note {
+margin-top: 25px;
+color: #a08b80;
+font-size: 9px;
+letter-spacing: 1.5px;
+text-align: center;
+}
+
+/* ABOUT */
+
+.beauty-about {
+padding: 90px 10%;
+display: grid;
+grid-template-columns: 1fr 1fr;
+align-items: center;
+gap: 80px;
+background: #efe3dc;
+}
+
+.beauty-about-visual {
+min-height: 400px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 25px;
+border: 1px solid #d1b5a8;
+background:
+radial-gradient(circle at center, #e6ccc0 0%, transparent 45%),
+linear-gradient(145deg, #f6ece5, #e5cec3);
+}
+
+.beauty-about-monogram {
+color: #a77c70;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 130px;
+letter-spacing: -12px;
+}
+
+.beauty-about-monogram span {
+color: var(--beauty-text);
+}
+
+.beauty-about-visual > span {
+color: #806259;
+font-size: 9px;
+letter-spacing: 3px;
+}
+
+.beauty-about-content h2 {
+margin: 18px 0;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: clamp(38px, 4.5vw, 55px);
+font-weight: 400;
+line-height: 1.12;
+letter-spacing: -1.5px;
+}
+
+.beauty-about-content > p {
+max-width: 460px;
+color: #77665e;
+font-size: 12px;
+line-height: 2;
+}
+
+.beauty-text-link {
+display: inline-block;
+margin-top: 20px;
+padding-bottom: 8px;
+border-bottom: 1px solid var(--beauty-rose);
+color: var(--beauty-deep-rose) !important;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 1px;
+}
+
+/* GALLERY */
+
+.beauty-gallery {
+background: var(--beauty-paper);
+}
+
+.beauty-gallery-grid {
+display: grid;
+grid-template-columns: repeat(3, minmax(0, 1fr));
+gap: 17px;
+}
+
+.beauty-gallery-item {
+min-height: 300px;
+padding: 25px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-between;
+border: 1px solid #d9bfb4;
+background: #ead8ce;
+}
+
+.beauty-gallery-one {
+background:
+radial-gradient(ellipse at 50% 30%, #d2ada0 0%, transparent 42%),
+linear-gradient(145deg, #e8d3c8, #f4e9e1);
+}
+
+.beauty-gallery-two {
+background:
+radial-gradient(ellipse at 70% 30%, #d6b2a8 0%, transparent 40%),
+linear-gradient(145deg, #f2e3dc, #dfc4b8);
+}
+
+.beauty-gallery-three {
+background:
+radial-gradient(ellipse at 30% 35%, #d8b6a9 0%, transparent 40%),
+linear-gradient(145deg, #e4cfc5, #f5eae2);
+}
+
+.beauty-gallery-item > span {
+color: #795c52;
+font-size: 9px;
+letter-spacing: 2px;
+}
+
+.beauty-gallery-item > strong {
+color: #4d3731;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: 27px;
+font-weight: 400;
+line-height: 1.2;
+}
+
+/* CONTACT */
+
+.beauty-contact {
+padding: 90px 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+border-top: 1px solid var(--beauty-line);
+background:
+radial-gradient(ellipse at center, #ead7ce 0%, transparent 65%),
+var(--beauty-bg);
+}
+
+.beauty-contact h2 {
+margin: 18px 0;
+font-family: Georgia, 'Times New Roman', serif;
+font-size: clamp(43px, 6vw, 68px);
+font-weight: 400;
+line-height: 1.05;
+letter-spacing: -2px;
+}
+
+.beauty-contact > p {
+max-width: 450px;
+margin-bottom: 28px;
+color: var(--beauty-muted);
+font-size: 12px;
+line-height: 1.9;
+}
+
+.beauty-contact > small {
+margin-top: 20px;
+color: #9c887e;
+font-size: 10px;
+}
+
+/* FOOTER */
+
+.beauty-footer {
+min-height: 115px;
+padding: 28px 7%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 25px;
+border-top: 1px solid var(--beauty-line);
+background: var(--beauty-paper);
+}
+
+.beauty-footer .beauty-logo {
+font-size: 19px;
+}
+
+.beauty-footer > p,
+.beauty-footer > span {
+color: #8d7b72;
+font-size: 9px;
+letter-spacing: 1.3px;
+}
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+.beauty-header {
+padding: 18px 4%;
+gap: 16px;
+}
+
+.beauty-logo {
+font-size: 20px;
+}
+
+.beauty-nav {
+gap: 15px;
+}
+
+.beauty-nav a {
+font-size: 10px;
+}
+
+.beauty-hero {
+padding: 65px 6%;
+gap: 35px;
+}
+
+.beauty-hero h1 {
+font-size: clamp(48px, 6vw, 67px);
+}
+
+.beauty-image-frame {
+height: 370px;
+}
+
+.beauty-service-grid {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.beauty-about {
+padding: 75px 7%;
+gap: 40px;
+}
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+.beauty-header {
+padding: 22px 6%;
+flex-wrap: wrap;
+gap: 20px;
+}
+
+.beauty-logo {
+font-size: 20px;
+}
+
+.beauty-header-cta {
+padding: 12px;
+font-size: 9px;
+}
+
+.beauty-nav {
+order: 3;
+width: 100%;
+justify-content: space-between;
+gap: 8px;
+padding-top: 15px;
+border-top: 1px solid var(--beauty-line);
+}
+
+.beauty-nav a {
+font-size: 10px;
+}
+
+.beauty-hero {
+grid-template-columns: 1fr;
+padding: 60px 7% 75px;
+gap: 35px;
+}
+
+.beauty-hero h1 {
+font-size: clamp(53px, 13vw, 72px);
+letter-spacing: -2px;
+}
+
+.beauty-hero-content > p {
+font-size: 12px;
+}
+
+.beauty-hero-actions {
+align-items: stretch;
+flex-direction: column;
+}
+
+.beauty-button-primary,
+.beauty-button-secondary {
+width: 100%;
+padding: 0 12px;
+font-size: 9px;
+}
+
+.beauty-hero-note {
+margin-top: 30px;
+}
+
+.beauty-hero-visual {
+min-height: 330px;
+}
+
+.beauty-image-frame {
+width: 90%;
+height: 330px;
+}
+
+.beauty-image-placeholder > span {
+width: 115px;
+height: 115px;
+font-size: 43px;
+}
+
+.beauty-floating-note {
+right: -2px;
+bottom: 20px;
+padding: 13px;
+}
+
+.beauty-hero-side-text {
+display: none;
+}
+
+.beauty-intro {
+padding: 65px 7%;
+}
+
+.beauty-intro h2 {
+font-size: 36px;
+}
+
+.beauty-services,
+.beauty-gallery {
+padding: 65px 7%;
+}
+
+.beauty-section-heading {
+align-items: flex-start;
+flex-direction: column;
+gap: 12px;
+margin-bottom: 30px;
+}
+
+.beauty-section-heading h2 {
+font-size: 36px;
+}
+
+.beauty-service-grid {
+grid-template-columns: 1fr;
+gap: 13px;
+}
+
+.beauty-service-card {
+min-height: 235px;
+}
+
+.beauty-service-card > p {
+min-height: auto;
+}
+
+.beauty-about {
+grid-template-columns: 1fr;
+padding: 65px 7%;
+gap: 35px;
+}
+
+.beauty-about-visual {
+min-height: 280px;
+}
+
+.beauty-about-monogram {
+font-size: 100px;
+}
+
+.beauty-about-content h2 {
+font-size: 43px;
+}
+
+.beauty-gallery-grid {
+grid-template-columns: 1fr;
+gap: 13px;
+}
+
+.beauty-gallery-item {
+min-height: 250px;
+}
+
+.beauty-contact {
+padding: 70px 7%;
+}
+
+.beauty-contact h2 {
+font-size: 48px;
+}
+
+.beauty-footer {
+padding: 30px 7%;
+flex-direction: column;
+gap: 17px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.beauty-site *,
+.beauty-site *::before,
+.beauty-site *::after {
+transition: none !important;
+scroll-behavior: auto !important;
+}
+}
