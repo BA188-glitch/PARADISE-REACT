@@ -1,16 +1,36 @@
-# React + Vite
+# PARADISE React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site em React e Vite para apresentar serviços, demonstrar modelos e preparar projetos digitais.
 
-Currently, two official plugins are available:
+## Executar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm ci
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
 
-## React Compiler
+O build fica em `dist/`. O arquivo `public/_redirects` mantém o acesso direto às rotas na hospedagem Netlify.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## O que está disponível
 
-## Expanding the ESLint configuration
+- Página inicial, serviços e vitrine de modelos.
+- Demonstrações Barber, Beauty e Food, com retorno à vitrine.
+- On-Demand: elaboração e download local de um briefing em texto. Não gera sites por IA nem envia solicitações.
+- Cadastro, login, recuperação e redefinição de senha via Supabase.
+- Conta e checkout integrados ao código de backend Supabase/Stripe. A operação depende da configuração descrita em `BACKEND.md`.
+- Página de erro para endereços desconhecidos.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Organização
+
+`src/` contém a aplicação e os estilos. `public/` contém o favicon e regras de hospedagem. `supabase/` contém as funções e a migração do comércio. Não coloque chaves privadas no frontend. A chave publishable usada em `src/supabase.js` é pública; permissões são responsabilidade das políticas no backend.
+
+## Limpeza realizada
+
+Removidos: protótipo Projeto sem rota funcional, script WebGL legado duplicado, folha CSS antiga com estilos globais conflitantes, imagens React/Vite e hero não utilizadas, sprite de ícones sem referências. A documentação padrão do Vite foi substituída por esta documentação do projeto.
+
+Navegação corrigida: Sobre, Minha conta, retorno do login, menu móvel e retorno dos modelos à vitrine. Os links de contato fictícios nos modelos agora levam ao briefing. Os exemplos continuam explicitamente demonstrativos.
+
+O backend foi preservado porque é utilizado. Não foram executados pagamentos, criação de contas ou publicação remota nesta revisão. Autenticação, permissões, webhooks e cobrança precisam dos testes integrados descritos em `BACKEND.md` antes de liberar vendas reais.

@@ -54,7 +54,7 @@ PARADISE<span>.</span>
 
     <button
       className="premium-account"
-      onClick={() => navigate('/login')}
+      onClick={() => navigate('/minha-conta')}
     >
       MINHA CONTA ↗
     </button>
@@ -245,7 +245,7 @@ PARADISE<span>.</span>
       para aproximar o modelo da identidade do seu negócio.
     </p>
 
-    <button onClick={() => navigate('/login')}>
+    <button onClick={() => navigate('/ondemand')}>
       CONHECER AS OPÇÕES ↗
     </button>
   </section>

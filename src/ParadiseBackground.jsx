@@ -5,6 +5,7 @@ const canvasRef = useRef(null)
 
 useEffect(() => {
 const canvas = canvasRef.current
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 const gl = canvas?.getContext('webgl')
 
 if (!canvas || !gl) {
@@ -90,7 +91,11 @@ function createShader(type, source) {
 const vertexShader = createShader(gl.VERTEX_SHADER, vertexShaderSource)
 const fragmentShader = createShader(gl.FRAGMENT_SHADER, fragmentShaderSource)
 
-if (!vertexShader || !fragmentShader) return
+if (!vertexShader || !fragmentShader) {
+  if (vertexShader) gl.deleteShader(vertexShader)
+  if (fragmentShader) gl.deleteShader(fragmentShader)
+  return
+}
 
 const program = gl.createProgram()
 gl.attachShader(program, vertexShader)
@@ -100,6 +105,8 @@ gl.linkProgram(program)
 if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
   console.error(gl.getProgramInfoLog(program))
   gl.deleteProgram(program)
+  gl.deleteShader(vertexShader)
+  gl.deleteShader(fragmentShader)
   return
 }
 

@@ -39,7 +39,7 @@ simbolo: '🍋',
 ]
 
 return (
-<main className="food-site">
+<><div className="demo-navigation"><a href="/sites-premium">← Voltar à vitrine</a><span>Modelo demonstrativo · sem pedidos ou agendamentos reais</span></div><main className="food-site">
 <header className="food-header">
 <a className="food-logo" href="#food-inicio">
 PARADISE<span>FOOD & CO.</span>
@@ -227,8 +227,8 @@ PARADISE<span>FOOD & CO.</span>
       Entre em contato para consultar o cardápio,
       fazer seu pedido ou conhecer nosso espaço.
     </p>
-    <a className="food-button-primary" href="mailto:contato@exemplo.com">
-      FALE CONOSCO ↗
+    <a className="food-button-primary" href="/ondemand">
+      PERSONALIZAR ESTE MODELO ↗
     </a>
     <small>
       Contato ilustrativo. Configure o canal de pedidos antes de publicar.
@@ -242,7 +242,7 @@ PARADISE<span>FOOD & CO.</span>
     <p>BOM DE VERDADE. FEITO COM SABOR.</p>
     <span>PARADISE © 2026</span>
   </footer>
-</main>
+</main></>
 
 )
 }

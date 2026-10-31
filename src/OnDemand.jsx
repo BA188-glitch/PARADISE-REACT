@@ -6,15 +6,21 @@ import './OnDemand.css'
 export default function OnDemand() {
   const navigate = useNavigate()
   const [descricao, setDescricao] = useState('')
+  const [mensagem, setMensagem] = useState('')
 
   function handleCriarSite(e) {
     e.preventDefault()
 
     if (!descricao.trim()) return
 
-    navigate('/ondemand/projeto', {
-      state: { descricao },
-    })
+    const arquivo = new Blob([`BRIEFING PARADISE\n\n${descricao.trim()}\n`], { type: 'text/plain;charset=utf-8' })
+    const url = URL.createObjectURL(arquivo)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = 'briefing-paradise.txt'
+    link.click()
+    setTimeout(() => URL.revokeObjectURL(url), 1000)
+    setMensagem('Briefing preparado para download. Nenhuma solicitação foi enviada; guarde o arquivo para compartilhar com a equipe.')
   }
 
   return (
@@ -28,7 +34,7 @@ export default function OnDemand() {
         </button>
 
         <span className="ondemand-badge">
-          AI WEBSITE BUILDER
+          BRIEFING DO PROJETO
         </span>
 
         <button
@@ -51,8 +57,8 @@ export default function OnDemand() {
         </h1>
 
         <p className="ondemand-subtitle">
-          Descreva o site que você imagina. A inteligência artificial
-          ajudará a transformar sua ideia em um projeto.
+          Descreva o site que você imagina e baixe suas ideias em um arquivo.
+          Inclua objetivos, páginas e referências para conversar com a equipe.
         </p>
 
         <form
@@ -79,10 +85,11 @@ export default function OnDemand() {
               type="submit"
               disabled={!descricao.trim()}
             >
-              Criar meu projeto <span>↗</span>
+              Baixar briefing <span>↓</span>
             </button>
           </div>
         </form>
+        {mensagem && <p role="status" className="ondemand-subtitle">{mensagem}</p>}
 
         <div className="ondemand-suggestions">
           <span>Precisa de inspiração?</span>
@@ -110,7 +117,7 @@ export default function OnDemand() {
         <div className="ondemand-features">
           <div>
             <span>✦</span>
-            <p>Criação assistida por IA</p>
+            <p>Ideias organizadas</p>
           </div>
 
           <div>

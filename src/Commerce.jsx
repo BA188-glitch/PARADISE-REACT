@@ -12,17 +12,17 @@ export default function Commerce({ mode }) {
  const [product,setProduct] = useState(new URLSearchParams(location.search).get('produto') || 'barber')
  useEffect(() => {
   let alive=true
-  Promise.all([supabase.auth.getUser(),supabase.from('products').select('*')]).then(async ([auth,catalog]) => {
+  Promise.all([supabase.auth.getUser(),mode==='checkout'?supabase.from('products').select('*'):Promise.resolve({data:[],error:null})]).then(async ([auth,catalog]) => {
    if(!alive) return
    setUser(auth.data.user); setProducts(catalog.data || []); setLoaded(true)
    if(catalog.error) setMessage('Catálogo indisponível. Tente novamente mais tarde.')
-   if(auth.data.user) {
+   if(auth.data.user && mode==='account') {
     const result=await supabase.from('orders').select('*').order('created_at',{ascending:false})
     if(alive) {setOrders(result.data || []); if(result.error) setMessage('Não foi possível carregar os pedidos.')}
    }
-  })
+  }).catch(() => {if(alive){setLoaded(true);setMessage('Não foi possível conectar. Atualize a página para tentar novamente.')}})
   return () => {alive=false}
- },[])
+ },[mode])
  async function submit(e) {
   e.preventDefault();setBusy(true);setMessage('')
   const data=new FormData(e.currentTarget)

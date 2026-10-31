@@ -30,8 +30,6 @@ try {
 
   setMensagem('Login realizado com sucesso!')
 
-  // Por enquanto, retorna à Home.
-  // A área do cliente será conectada depois.
   navigate('/minha-conta')
 } catch (error) {
   console.error('Erro no login:', error)
@@ -51,7 +49,7 @@ return ( <main className="login-page">
 <button
 type="button"
 className="login-text-button"
-onClick={() => navigate('/minha-conta')}
+onClick={() => navigate('/')}
 >
 ← Voltar ao início </button>
 

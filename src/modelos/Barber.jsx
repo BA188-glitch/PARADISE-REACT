@@ -7,7 +7,7 @@ const servicos = [
 { nome: 'Corte + barba', descricao: 'A combinação perfeita para renovar o visual.', preco: 'R$ 60' },
 ]
 
-return ( <main className="barber-site"> <header className="barber-header"> <a className="barber-logo" href="#inicio">
+return ( <><div className="demo-navigation"><a href="/sites-premium">← Voltar à vitrine</a><span>Modelo demonstrativo · sem pedidos ou agendamentos reais</span></div><main className="barber-site"> <header className="barber-header"> <a className="barber-logo" href="#inicio">
 BARBER<span>STUDIO</span> </a>
 
 ```
@@ -125,8 +125,8 @@ BARBER<span>STUDIO</span> </a>
     <p>
       Entre em contato e escolha o melhor horário para você.
     </p>
-    <a className="barber-button-primary" href="mailto:contato@exemplo.com">
-      Entrar em contato ↗
+    <a className="barber-button-primary" href="/ondemand">
+      Personalizar este modelo ↗
     </a>
     <small>Contato ilustrativo — será personalizado para cada cliente.</small>
   </section>
@@ -138,7 +138,7 @@ BARBER<span>STUDIO</span> </a>
     <p>ESTILO FEITO PARA VOCÊ.</p>
     <span>DEMO CRIADA POR PARADISE © 2026</span>
   </footer>
-</main>
+</main></>
 
 )
 }

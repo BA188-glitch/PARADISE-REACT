@@ -29,7 +29,7 @@ numero: '04',
 ]
 
 return (
-<main className="beauty-site">
+<><div className="demo-navigation"><a href="/sites-premium">← Voltar à vitrine</a><span>Modelo demonstrativo · sem pedidos ou agendamentos reais</span></div><main className="beauty-site">
 <header className="beauty-header">
 <a className="beauty-logo" href="#beauty-inicio">
 PARADISE
@@ -255,8 +255,8 @@ PARADISE
       horários disponíveis.
     </p>
 
-    <a className="beauty-button-primary" href="mailto:contato@exemplo.com">
-      SOLICITAR AGENDAMENTO ↗
+    <a className="beauty-button-primary" href="/ondemand">
+      PERSONALIZAR ESTE MODELO ↗
     </a>
 
     <small>
@@ -274,7 +274,7 @@ PARADISE
 
     <span>PARADISE © 2026</span>
   </footer>
-</main>
+</main></>
 
 )
 }

@@ -4,15 +4,12 @@ import { supabase } from './supabase'
 import Login from './Login'
 import Commerce from './Commerce'
 import './App.css'
-import './SitesPremium.css'
 import SitesPremium from './SitesPremium'
 import Barber from './modelos/Barber'
 import Beauty from './modelos/Beauty'
 import Food from './modelos/Food'
-import './paradise.css'
 import ParadiseBackground from './ParadiseBackground'
 import OnDemand from './OnDemand'
-import Projeto from './Projeto'
 import Servicos from './Servicos.jsx'
 
 
@@ -32,16 +29,16 @@ function Home() {
         <nav>
           <a href="#inicio">Início</a>
           <a href="/sites-premium">Vitrine</a>
-          <a href="/sites-premium">Modelos</a>
-          <a href="/Sobre">Sobre</a>
+
+          <a href="#sobre">Sobre</a>
           <a href="/servicos">Serviços</a>
           <a href="/ondemand">On-Demand</a>
-          <a href="checkout" className="cart-link">
-            🛒 <span>Carrinho</span>
+          <a href="/checkout" className="cart-link">
+            <span>Checkout</span>
           </a>
         </nav>
 
-        <button className="account-button" onClick={() => navigate('/Login')}>
+        <button className="account-button" onClick={() => navigate('/minha-conta')}>
           MINHA CONTA <span>↗</span>
         </button>
       </header>
@@ -84,7 +81,7 @@ function Home() {
           <div className="aura-ring ring-one"></div>
           <div className="aura-ring ring-two"></div>
           <div className="aura-core"><span>P</span></div>
-          <div className="visual-label label-top">THE WORD IS YOUR</div>
+          <div className="visual-label label-top">THE WORLD IS YOUR</div>
           <div className="visual-label label-bottom">BEYOND ORDINARY</div>
         </div>
 
@@ -203,7 +200,7 @@ function Rotas() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/checkout" element={<Commerce mode="checkout" />} /><Route path="/minha-conta" element={<Commerce mode="account" />} /><Route path="/criar-conta" element={<Commerce mode="signup" />} /><Route path="/redefinir-senha" element={<Commerce mode="reset" />} /><Route path="/Login" element={<Login />} />
+      <Route path="/checkout" element={<Commerce mode="checkout" />} /><Route path="/minha-conta" element={<Commerce mode="account" />} /><Route path="/criar-conta" element={<Commerce mode="signup" />} /><Route path="/redefinir-senha" element={<Commerce mode="reset" />} /><Route path="/login" element={<Login />} />
       <Route path="/recuperar-senha" element={<RecuperarSenha />} />
       <Route path="/sites-premium" element={<SitesPremium />} />
       <Route path="/sites-premium/barber" element={<Barber />} />
@@ -212,7 +209,7 @@ function Rotas() {
       <Route path="/ondemand" element={<OnDemand />} />
       <Route path="/servicos" element={<Servicos />} />
 
-      <Route path="*" element={<Home />} />
+      <Route path="*" element={<main className="login-page"><section className="login-card"><h1>Página não encontrada</h1><p>Confira o endereço ou volte para a página inicial.</p><a href="/">Voltar ao início ↗</a></section></main>} />
     </Routes>
   )
 }
