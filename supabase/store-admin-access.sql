@@ -1,0 +1,1 @@
+insert into public.store_admin_emails(site_id,email) values ('paradise','paradise.supportweb@gmail.com'),('speed-diecast','speeddiecast001@gmail.com') on conflict(site_id) do update set email=excluded.email;

@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, lazy, Suspense } from 'react'
+import { ManagedSections } from './StoreContext'
+const Admin = lazy(() => import('./Admin'))
 import { supabase } from './supabase'
 import Login from './Login'
 import Commerce from './Commerce'
@@ -43,7 +45,7 @@ function Home() {
         </button>
       </header>
 
-      <section className="hero-section" id="inicio">
+      <ManagedSections page="home"><section className="hero-section" id="inicio">
         <div className="hero-content">
           <div className="status">
             <span className="status-dot"></span>
@@ -106,9 +108,9 @@ function Home() {
         <a href="#sobre" className="round-link" aria-label="Saiba mais">↘</a>
       </section>
 
-      <footer className="site-footer" id="sobre">
+      </ManagedSections><footer className="site-footer" id="sobre">
         <a href="#inicio" className="footer-brand">PARADISE®</a>
-        <span>BUILT BEYOND THE ORDINARY.</span>
+        <span>BUILT BEYOND THE ORDINARY.</span><a href="/admin">Administração</a>
       </footer>
     </main>
   )
@@ -199,7 +201,7 @@ function RecuperarSenha() {
 function Rotas() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />} /><Route path="/admin" element={<Suspense fallback={<p>Carregando painel…</p>}><Admin /></Suspense>} />
       <Route path="/checkout" element={<Commerce mode="checkout" />} /><Route path="/minha-conta" element={<Commerce mode="account" />} /><Route path="/criar-conta" element={<Commerce mode="signup" />} /><Route path="/redefinir-senha" element={<Commerce mode="reset" />} /><Route path="/login" element={<Login />} />
       <Route path="/recuperar-senha" element={<RecuperarSenha />} />
       <Route path="/sites-premium" element={<SitesPremium />} />

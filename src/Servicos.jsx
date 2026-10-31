@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import './Servicos.css'
+import { ManagedSections } from './StoreContext'
 
 export default function Servicos() {
 const navigate = useNavigate()
@@ -19,7 +20,7 @@ PARADISE<span>.</span>
     </button>
   </header>
 
-  <section className="servicos-hero">
+  <ManagedSections page="servicos"><section id="servicos-hero" className="servicos-hero">
     <span className="servicos-eyebrow">
       YOUR DIGITAL UNIVERSE
     </span>
@@ -36,7 +37,7 @@ PARADISE<span>.</span>
     </p>
   </section>
 
-  <section className="servicos-lista">
+  <section id="servicos-lista" className="servicos-lista">
     <article className="servico-card">
       <span className="servico-numero">01 / DEVELOPMENT</span>
       <div className="servico-icone">⌘</div>
@@ -70,7 +71,7 @@ PARADISE<span>.</span>
     </article>
   </section>
 
-  <footer className="servicos-footer">
+  </ManagedSections><footer className="servicos-footer">
     <span>PARADISE®</span>
     <span>BUILT BEYOND THE ORDINARY.</span>
   </footer>

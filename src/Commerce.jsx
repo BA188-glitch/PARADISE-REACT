@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react'
 import { supabase } from './supabase'
 import './Login.css'
+import RequestCheckout from './RequestCheckout'
 
 export default function Commerce({ mode }) {
+ return mode === 'checkout' ? <RequestCheckout /> : <AccountCommerce mode={mode} />
+}
+function AccountCommerce({ mode }) {
  const [message,setMessage] = useState('')
  const [busy,setBusy] = useState(false)
  const [orders,setOrders] = useState([])

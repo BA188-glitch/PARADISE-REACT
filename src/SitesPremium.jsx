@@ -1,38 +1,12 @@
 import { useNavigate } from 'react-router-dom'
 import './SitesPremium.css'
-
-const modelos = [
-{
-id: 1,
-nome: 'PARADISE BARBER',
-categoria: 'BELEZA & ESTILO',
-descricao: 'Uma presença digital sofisticada para barbearias modernas.',
-preco: 'Sob consulta',
-estilo: 'barber',
-etiqueta: 'MAIS VERSÁTIL',
-},
-{
-id: 2,
-nome: 'PARADISE BEAUTY',
-categoria: 'BELEZA & BEM-ESTAR',
-descricao: 'Elegância e personalidade para salões e profissionais da beleza.',
-preco: 'Sob consulta',
-estilo: 'beauty',
-etiqueta: 'ELEGANTE',
-},
-{
-id: 3,
-nome: 'PARADISE FOOD',
-categoria: 'GASTRONOMIA',
-descricao: 'Apresente seu cardápio e facilite os pedidos dos clientes.',
-preco: 'Sob consulta',
-estilo: 'food',
-etiqueta: 'COMERCIAL',
-},
-]
+import { useStore, ManagedSections, CatalogStatus } from './StoreContext'
+import { availableProducts, money, safeUrl } from './cms-core'
 
 export default function SitesPremium() {
 const navigate = useNavigate()
+const {data}=useStore()
+const modelos=availableProducts(data).map(p=>({...p, etiqueta:p.destaque, preco:p.sobConsulta?'Sob consulta':money(p.preco)}))
 
 return (
 <main className="premium-page">
@@ -60,7 +34,7 @@ PARADISE<span>.</span>
     </button>
   </header>
 
-  <section className="premium-hero">
+  <CatalogStatus /><ManagedSections page="premium"><section id="premium-hero" className="premium-hero">
     <span className="premium-eyebrow">
       <span /> PARADISE DIGITAL STUDIO
     </span>
@@ -127,8 +101,8 @@ PARADISE<span>.</span>
               <span>PRÉVIA DO MODELO</span>
             </div>
 
-            <div className="premium-art">
-              {modelo.estilo === 'barber' && (
+            <div className="premium-art">{safeUrl(modelo.imagem)?<img className="cms-store-photo" src={safeUrl(modelo.imagem)} alt={modelo.nome}/>:null}{!modelo.estilo&&!modelo.imagem&&<h3>{modelo.nome}</h3>}
+              {!modelo.imagem && modelo.estilo === 'barber' && (
                 <>
                   <span className="art-overline">
                     EST. MMXXVI
@@ -146,7 +120,7 @@ PARADISE<span>.</span>
                 </>
               )}
 
-              {modelo.estilo === 'beauty' && (
+              {!modelo.imagem && modelo.estilo === 'beauty' && (
                 <>
                   <span className="art-overline">
                     BEAUTY STUDIO
@@ -164,7 +138,7 @@ PARADISE<span>.</span>
                 </>
               )}
 
-              {modelo.estilo === 'food' && (
+              {!modelo.imagem && modelo.estilo === 'food' && (
                 <>
                   <span className="art-overline">
                     FRESH · LOCAL · AUTHENTIC
@@ -203,6 +177,7 @@ PARADISE<span>.</span>
               <div className="premium-card-actions">
                 <button
                   className="premium-demo-button"
+                  disabled={!modelo.estilo}
                   onClick={() =>
                     navigate(`/sites-premium/${modelo.estilo}`)
                   }
@@ -212,7 +187,7 @@ PARADISE<span>.</span>
 
                 <button
                   onClick={() =>
-                    navigate('/checkout?produto=' + modelo.estilo, {
+                    navigate('/checkout?produto=' + encodeURIComponent(modelo.id), {
                       state: {
                         modelo: modelo.nome,
                       },
@@ -229,7 +204,7 @@ PARADISE<span>.</span>
     </div>
   </section>
 
-  <section className="premium-custom">
+  <section id="premium-custom" className="premium-custom">
     <span className="premium-eyebrow">
       SUA MARCA. SUA IDENTIDADE.
     </span>
@@ -250,7 +225,7 @@ PARADISE<span>.</span>
     </button>
   </section>
 
-  <footer className="premium-footer">
+  </ManagedSections><footer className="premium-footer">
     <span>PARADISE © 2026</span>
     <span>DESIGNED TO GO BEYOND.</span>
   </footer>
